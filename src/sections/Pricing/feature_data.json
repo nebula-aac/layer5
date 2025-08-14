@@ -1685,74 +1685,6 @@
   {
     "theme": "",
     "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Academy",
-    "feature": "View academy and it's content",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Learning Path",
-    "feature": "View all learning paths",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Challenges",
-    "feature": "View all challenges",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "pricing_page": "x",
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
     "category": "Platform Support",
     "functionOrder": "",
     "function": "mesheryctl",
@@ -3113,7 +3045,7 @@
   {
     "theme": "",
     "categoryOrder": "1",
-    "category": "Life",
+    "category": "Lifecycle Management",
     "functionOrder": "",
     "function": "Timeline (DVR)",
     "feature": "Playback service transactions. Scrub over the history of changes to your deployments.",
