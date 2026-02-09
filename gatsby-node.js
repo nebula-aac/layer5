@@ -42,7 +42,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         redirectInBrowser: true,
         isPermanent: true,
       });
-    } 
+    }
 
     return createPage(pageProps);
   };
