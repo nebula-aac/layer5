@@ -11,8 +11,6 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
-const isDevelopment = process.env.NODE_ENV === "development";
-const isProduction = process.env.NODE_ENV === "production";
 const {
   componentsData,
 } = require("./src/sections/Projects/Sistent/components/content");
@@ -31,22 +29,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const envCreatePage = (props) => {
+    const pageProps = {
+      ...props,
+      matchPath: props.matchPath || props.path,
+    };
+
     if (process.env.CI === "true") {
-      const { path, matchPath, ...rest } = props;
+      const { path } = pageProps;
       createRedirect({
         fromPath: `/${path}/`,
         toPath: `/${path}`,
         redirectInBrowser: true,
         isPermanent: true,
       });
-
-      return createPage({
-        path: path,
-        matchPath: matchPath || path,
-        ...rest,
-      });
     }
-    return createPage(props);
+
+    return createPage(pageProps);
   };
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
@@ -231,6 +229,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   };
 
   const blogs = filterByCollection("blog");
+
   const resources = filterByCollection("resources");
   const news = filterByCollection("news");
   const books = filterByCollection("service-mesh-books");
@@ -661,11 +660,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "kanvas-labs":
           slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
-        case "resources":
-          if (node.frontmatter.published)
-            slug = `/${collection}/${slugify(
-              node.frontmatter.category
-            )}/${slugify(node.frontmatter.title)}`;
+          case "resources":
+            if (node.frontmatter.published)
+              slug = `/${collection}/${slugify(
+                node.frontmatter.category
+              )}/${slugify(node.frontmatter.title)}`;
           break;
         case "members":
           if (node.frontmatter.published)
