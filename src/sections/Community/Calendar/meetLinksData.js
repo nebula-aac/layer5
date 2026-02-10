@@ -52,5 +52,14 @@ export const meet_links_data = [
     meeting_minutes: "https://bit.ly/2It7IA4",
     meeting_link: "https://meet.layer5.io/community",
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
+  },
+  {
+    day: "Fridays",
+    meeting: "CMC Study Group Meeting",
+    slack_channel: "#general",
+    slack_link: "https://layer5io.slack.com/archives/CDM0ACDM5",
+    meeting_minutes: "https://docs.google.com/document/d/1O0l7eHX5dTkxdTXfebzvkoURnDexKFuw3lw2beUCSYM/edit",
+    meeting_link: "https://meet.meshery.io/cmc",
+    meeting_recordings: "https://www.youtube.com/@mesheryio?sub_confirmation=1",
   }
 ];
