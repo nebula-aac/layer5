@@ -55,7 +55,7 @@ export const meet_links_data = [
   },
   {
     day: "Fridays",
-    meeting: "Weekly CMC Study Group Meeting",
+    meeting: "CMC Study Group Meeting",
     slack_channel: "#general",
     slack_link: "https://layer5io.slack.com/archives/CDM0ACDM5",
     meeting_minutes: "https://docs.google.com/document/d/1O0l7eHX5dTkxdTXfebzvkoURnDexKFuw3lw2beUCSYM/edit",
