@@ -10,29 +10,29 @@ import Pagination from "../../Resources/Resources-grid/paginate";
 import SearchBox from "../../../reusecore/Search";
 
 const BlogList = ({
-  isListView = false,
-  setListView = () => {},
-  setGridView = () => {},
-  pageContext = {},
-  currentPage = 1,
-  searchQuery = "",
-  searchData = [],
-  setCurrentPage = () => {},
-  queryResults = [],
-  postsPerPage = 10,
-  searchedPosts = [],
+  isListView,
+  setListView,
+  setGridView,
+  pageContext,
+  currentPage,
+  searchQuery,
+  searchData,
+  setCurrentPage,
+  queryResults,
+  postsPerPage,
+  searchedPosts,
 }) => {
-  const category = pageContext?.category ?? null;
-  const tag = pageContext?.tag ?? null;
-
-  const totalCount = Array.isArray(queryResults) ? queryResults.length : 0;
-
+  const category = pageContext.category ? pageContext.category : null;
+  const tag = pageContext.tag ? pageContext.tag : null;
+  const totalCount = queryResults.length;
   const header = tag
     ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
     : category
-      ? `${totalCount} post${totalCount === 1 ? "" : "s"} categorized as "${category}"`
+      ? `${totalCount} post${totalCount === 1 ? "" : "s"
+      } categorized as "${category}"`
       : "Blog";
 
+  // Change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -45,12 +45,14 @@ const BlogList = ({
         img={RssFeedIcon}
         feedlink="/blog/feed.xml"
       />
-
       <div className="blog-page-wrapper">
         <Container>
-          <Row style={{ flexWrap: "wrap" }}>
+          <Row style={{
+            flexWrap: "wrap"
+          }}
+          >
             <Col $xs={12} $lg={8}>
-              {!tag && !category ? (
+              {!pageContext.tag && !pageContext.category ? (
                 <div className="tooltip-search">
                   <BlogViewToolTip
                     isListView={isListView}
@@ -60,51 +62,38 @@ const BlogList = ({
                   <SearchBox
                     searchQuery={searchQuery}
                     searchData={searchData}
-                    paginate={paginate}
-                    currentPage={currentPage}
+                    paginate={paginate} currentPage={currentPage}
                     focusSearch={true}
                   />
                 </div>
               ) : (
-                <SearchBox
-                  searchQuery={searchQuery}
-                  searchData={searchData}
-                  paginate={paginate}
-                  currentPage={currentPage}
-                  focusSearch={true}
-                />
+                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true} />
               )}
-
               <div className="blog-list-wrapper">
-                <Row className="blog-lists" style={{ flexWrap: "wrap" }}>
-                  {Array.isArray(searchedPosts) &&
-                    searchedPosts.length > 0 &&
-                    searchedPosts.map(({ id, frontmatter, fields }, index) => (
+                <Row style={{
+                  flexWrap: "wrap"
+                }}
+                className="blog-lists"
+                >
+                  {searchedPosts.length > 0 &&
+                    searchedPosts?.map(({ id, frontmatter, fields }, index) => (
                       <Col $xs={12} key={id}>
-                        <Card
-                          frontmatter={frontmatter}
-                          fields={fields}
-                          loading={index === 0 ? "eager" : "lazy"}
-                          fetchpriority={index === 0 ? "high" : "auto"}
-                        />
+                        <Card frontmatter={frontmatter} fields={fields} loading={index === 0 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} />
                       </Col>
                     ))}
-
                   <Col>
-                    {Array.isArray(searchedPosts) &&
-                      searchedPosts.length > 0 && (
-                        <Pagination
-                          postsPerPage={postsPerPage}
-                          totalPosts={totalCount}
-                          currentPage={currentPage}
-                          paginate={paginate}
-                        />
-                      )}
+                    {searchedPosts.length > 0 && (
+                      <Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={queryResults.length}
+                        currentPage={currentPage}
+                        paginate={paginate}
+                      />
+                    )}
                   </Col>
                 </Row>
               </div>
             </Col>
-
             <Col $xs={12} $lg={4}>
               <Sidebar pageContext={pageContext} />
             </Col>
