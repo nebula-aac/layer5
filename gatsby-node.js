@@ -116,7 +116,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           frontmatter {
             program
             programSlug
-            date
           }
           fields {
             collection
@@ -230,23 +229,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   };
 
   const blogs = filterByCollection("blog");
-  blogs.sort((a, b) => {
-    const da =
-      new Date(a.frontmatter?.date || a.internal.contentFilePath).getTime();
-    const db =
-      new Date(b.frontmatter?.date || b.internal.contentFilePath).getTime();
-    return db - da;
-  });
-
-  paginate({
-    createPage: envCreatePage,
-    items: blogs,
-    itemsPerPage: 10,
-    pathPrefix: "/blog",
-    component: path.resolve(
-      "src/sections/Blog/Blog-list/index.js"
-    ),
-  });
 
   const resources = filterByCollection("resources");
   const news = filterByCollection("news");
@@ -664,13 +646,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       slug = `/${collection}/${node.frontmatter.permalink}`;
     } else {
       switch (collection) {
-        case "blog": {
-          const category = node.frontmatter.category || "general";
-          const title = node.frontmatter.title || node.id;
-
-          slug = `/${collection}/${slugify(category)}/${slugify(title)}`;
+        case "blog":
+          if (node.frontmatter.published)
+            slug = `/${collection}/${slugify(
+              node.frontmatter.category
+            )}/${slugify(node.frontmatter.title)}`;
           break;
-        }
         case "news":
           slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
           break;
@@ -679,12 +660,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "kanvas-labs":
           slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
-        case "resources": {
-          const category = node.frontmatter.category || "general";
-          const title = node.frontmatter.title || node.id;
-          slug = `/${collection}/${slugify(category)}/${slugify(title)}`;
+          case "resources":
+            if (node.frontmatter.published)
+              slug = `/${collection}/${slugify(
+                node.frontmatter.category
+              )}/${slugify(node.frontmatter.title)}`;
           break;
-        }
         case "members":
           if (node.frontmatter.published)
             slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
