@@ -24,7 +24,7 @@
     "deploy": "gatsby build && gh-pages -d public -b master",
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "version": "gatsby --version",
-    "prepare": "husky install"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
@@ -43,7 +43,7 @@
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.4",
     "@react-icons/all-files": "^4.1.0",
-    "@sistent/sistent": "^0.15.12",
+    "@sistent/sistent": "^0.15.23",
     "@svgr/webpack": "^8.0.1",
     "@types/mui-datatables": "^4.3.13",
     "ajv": "^8.17.1",
@@ -142,6 +142,7 @@
     "gh-pages": "^6.0.0",
     "globals": "^17.0.0",
     "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "rimraf": "^6.1.2",
     "webpack-cli": "^6.0.1"
   }
