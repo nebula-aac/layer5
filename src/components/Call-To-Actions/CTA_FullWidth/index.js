@@ -27,7 +27,7 @@ const CTA_FullWidthWrapper = styled.div`
     }
 
     .cta-content {
-        padding: 0.5rem;
+        padding: 2rem;
         display: flex;
         flex: auto;
         text-align: center;
@@ -35,25 +35,22 @@ const CTA_FullWidthWrapper = styled.div`
         height: 100%;
 
         div {
-          flex: 0 0 75%;
+          flex: 1;
+          padding-right: 1rem;
         }
 
         p {
             margin-top: 0.5rem;
         }
+        
         a {
-            flex: 0 0 25%;
+            flex: 0 0 auto;
         }
     }
 
     @media screen and (max-width: 1200px) {
       .cta-content {
-        div {
-            flex: 0 0 65%;
-        }
-        a {
-            flex: 0 0 35%;
-        }
+        padding: 1rem;
       }
     }
 
@@ -90,6 +87,7 @@ const CTA_FullWidthWrapper = styled.div`
             div {
                 flex: none;
                 width: 100%;
+                padding-right: 0;
             }
 
             p {
