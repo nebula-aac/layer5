@@ -16,8 +16,8 @@ const HandbookFaqAccordion = ({ faqData }) => {
   return (
     <HandbookFaqWrapper>
       <Accordion allowMultipleExpanded={false} allowZeroExpanded={true}>
-        {faqData.map((faq, index) => (
-          <AccordionItem key={index}>
+        {faqData.map((faq) => (
+          <AccordionItem key={faq.question}>
             <AccordionTitle>
               <IconWrapper>
                 <h5>{faq.question}</h5>
