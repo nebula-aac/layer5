@@ -58,7 +58,7 @@
   "6497-317ccb9f3172a7f9d63e.js": "6497-317ccb9f3172a7f9d63e.js",
   "66102-476a8fe7d9058261288f.js": "66102-476a8fe7d9058261288f.js",
   "680c221bb1501394ead7fdb4ced56cbae517b917.js": "680c221bb1501394ead7fdb4ced56cbae517b917-97d5277d648509d049ff.js",
-  "6c0e371e18b916188e0b7ed08145a1718f192846.js": "6c0e371e18b916188e0b7ed08145a1718f192846-e41158ddef687f75605d.js",
+  "6c0e371e18b916188e0b7ed08145a1718f192846.js": "6c0e371e18b916188e0b7ed08145a1718f192846-f6564f12a54558111d1e.js",
   "6cd175e5d0d27610fa450a72f0e50ce9b8104457.js": "6cd175e5d0d27610fa450a72f0e50ce9b8104457-b81947289e26d7d8e4bc.js",
   "6e5ae8003e0493d78c2791fd9be5567218cdeafa.js": "6e5ae8003e0493d78c2791fd9be5567218cdeafa-d19542ed6b4b6849e1f1.js",
   "6f82d58d.js": "6f82d58d-1a9bae8b2f1c97b7c5c0.js",
@@ -118,8 +118,8 @@
   "abc816cb8e42251ebdae0f5e5926d1546f10ab27.js": "abc816cb8e42251ebdae0f5e5926d1546f10ab27-a83639368eaceed848cd.js",
   "ac581ebe.js": "ac581ebe-36cccd14d56d90dda80d.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-7469107fc0c086e61cb8.js",
-  "app-d90079d9989da69f1d09.js.LICENSE.txt": "app-d90079d9989da69f1d09.js.LICENSE.txt",
-  "app.js": "app-d90079d9989da69f1d09.js",
+  "app-b2d9a91b57d70ea80c5c.js.LICENSE.txt": "app-b2d9a91b57d70ea80c5c.js.LICENSE.txt",
+  "app.js": "app-b2d9a91b57d70ea80c5c.js",
   "b5f6012b.js": "b5f6012b-a7763041fda46eef5ffb.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-3b21013c6eaf2595832c.js",
   "bd221dda5bee7f47d91df06c328496a517f89a80.js": "bd221dda5bee7f47d91df06c328496a517f89a80-f76337ff7ff17ed3ad28.js",
@@ -1498,7 +1498,7 @@
   "static/abdechakour-h.jpeg": "static/abdechakour-h-acaad71120279adff9034e10b8ba323e.jpeg",
   "static/abiolaSCA.webp": "static/abiolaSCA-372e0d2fc2bb3d44b2443aad11b8bcbb.webp",
   "static/abstractions.webp": "static/abstractions-c1cb8e4a1e00ca34343d9da65063acbe.webp",
-  "static/academy-catalog.gif": "static/academy-catalog-17d9ddb7ffe231cf83a6ed5dc0d76666.gif",
+  "static/academy-catalog.gif": "static/academy-catalog-265086d31bc274d043bcc7ca08dc5326.gif",
   "static/action.png": "static/action-60f1f81ff6fc862bc28f8789037c85a3.png",
   "static/active.webp": "static/active-fe016dcb87865d5b345be9e09c7f53e1.webp",
   "static/add-cluster.png": "static/add-cluster-0515339ac1c44509564763c4eb6f5e31.png",
@@ -2104,5 +2104,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.3ee686c849015a948e38.css",
-  "webpack-runtime.js": "webpack-runtime-cee4dbc1892fef1cb29f.js"
+  "webpack-runtime.js": "webpack-runtime-3aa69358d023ba9afc9b.js"
 }
